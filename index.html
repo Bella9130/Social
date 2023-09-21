@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/image/lbsLogo.png">
+    <title>Wiki grupo 2</title>
+</head>
+<body onclick="PlayAudio">
+    <header>
+        <div class="container--left">
+            <img src="/assets/image/lbsLogo.png" alt="logo" class="image--logo">
+                <p class="parrafo-header">LBS<span>Liceo Bilingue Del Sur</span></p>
+        </div>
+        <div class="container--right">
+            <img src="https://static-00.iconduck.com/assets.00/search-icon-2044x2048-psdrpqwp.png" alt="serach" class="icon-search">
+            <a href="/" class="button--same">GRUPO 2</a>
+            <a href="https://www.facebook.com/liceobilinguedelsurguatemala?locale=es_LA" target="_blank">
+                <input class="button--inscribirse" type="button" value="VER COLEGIO" > 
+            </a>
+        </div>
+    </header>
+    <nav>
+        <div class="line-nav">
+            <ul>
+                <li><a href="/ATHORS/todos.html">AUTORES</a></li>
+                <li>/</li>
+                <li><a href="https://www.canva.com/design/DAFtu6AupZE/view?utm_content=DAFtu6AupZE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">TECNICAS DE INVESTIGACIÓN</a></li>
+                <li>/</li>
+                <li><a href="/assets/images/Instrucciones.png" target="_blank">INSTRUCIONES</a></li>
+                <li>/</li>
+                <li><a href="/assets/images/4toBach.jpeg">4TO BACH</a></li>
+            </ul>
+        </nav>
+        </div>
+
+
+    <!-------------------- Banner -------------------->
+
+    <main>
+        <div class="video-home">
+            <video src="/assets/image/Himno Nacional de Guatemala _ Vuelotenango(720P_HD).mp4" class="video-fondo" autoplay muted loop></video>
+            <div class="protect"></div>
+        </div>
+        <section class="hero-homepage">
+    </main>
+    <section class="section__banner">
+        <div class="banner__description">
+            MIRA NUESTRO TRABAJO
+            <span>ESTADO DE DERECHO</span>
+            <strong>
+                Acontinuación mira nuestro trabajo de investigación acerca del ESTADO DE DERECHO 
+                <span>este trabajo incluye una entrevista con una estudiante de derecho acerca de este tema</span>
+            </strong>
+            <a href="/public/Indice.html" target="_blank" class="go__store">Descubre lo que tenemos para ti > </a>
+        </div>
+        <div class="banner"></div>
+        <div class="container--button-audio--audio">
+            <audio src="/assets/image/PUES.mp" loop autoplay id="music-fondo"></audio>
+            <img src="/assets/image/5f477fa71490460004d4eca5.png" alt="" id="audio-img">
+        </div>
+    </section>
+    <!-- https://cdn-icons-png.flaticon.com/512/483/483365.png
+    https://cdn-icons-png.flaticon.com/512/109/109185.png -->
+    <script>
+        
+        function PlayAudio () {
+            document.getElementById('music-fondo').play();
+
+        }
+    </script>
+    <script src="./main.js"></script>
+</body>
+</html>
