@@ -49,6 +49,7 @@ header{
     box-sizing: border-box;
     transition: .4s;
     margin: 10px 0 10px 0;
+
 }
 
 /* .... CONTAINER LEFT .... */
@@ -95,7 +96,7 @@ header{
     align-items: center;
 }
 
-.icon-search{
+#icon-search{
     width: 30px;
     height: 30px;
     position: relative;
@@ -155,15 +156,16 @@ ul{
     display: flex;
     justify-content: space-evenly;
     padding: 0;
+    margin: 0;
     position: relative;
     padding-left: 200px;
     right: 0;
 }
-ul li{
+.li-btn-nav{
     list-style: none;
     margin: 10px;
 }
-a{
+.a-btn-nav{
     text-decoration: none;
     color: var(--white-complete);
     font-size: 14px;
@@ -183,7 +185,7 @@ a{
     object-fit: cover;
     position: fixed;
 }
-.protect{
+#protect{
     position: absolute;
     top: 0;
     left: 0;
@@ -284,4 +286,73 @@ a{
     100%{
         transform: scale(1);
     }
+}
+
+#ctn-icon-search i{
+    font-size: 18px;
+    color: var(--white-complete);
+    cursor: pointer;
+    transition: all 300ms;
+}
+#ctn-icon-search i:hover{
+    font-size: 18px;
+    color: var(--gray-dark);
+    cursor: pointer;
+    transition: all 300ms;
+}
+#ctn-bars-search{
+    position: fixed;
+    top: -140px;
+    width: 100%;
+    background: var(--white-complete);
+    padding: 20px;
+    z-index: 9;
+    margin: 40px 0 0 0;
+    transition: all 600ms;
+}
+
+#ctn-bars-search input{
+    display: block;
+    width: 1200px;
+    margin: auto;
+    padding: 10px;
+    font-size: 18px;
+    z-index: 9;
+}
+
+#box-search{
+    position: fixed;
+    top: 195px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 1200px;
+    background-color: var(--white-complete);
+    z-index: 8;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 20px;
+    display: none;
+}
+#box-search li a{
+    display: block;
+    text-decoration: none;
+    width: 1200px;
+    color: var(--black);
+    padding: 12px 20px;
+}
+#box-search li a:hover{
+    background: var(--gray-light);
+}
+#box-search li a i{
+    margin-right: 9px;
+    color: var(--gray);
+}
+#cover-ctn-search{
+    width: 100%;
+    height: 100%;
+    background-color: var(--gray-darker);
+    opacity: .5;
+    position: fixed;
+    display: none;
 }

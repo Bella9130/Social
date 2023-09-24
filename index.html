@@ -18,7 +18,11 @@
                 <p class="parrafo-header">LBS<span>Liceo Bilingue Del Sur</span></p>
         </div>
         <div class="container--right">
-            <img src="https://static-00.iconduck.com/assets.00/search-icon-2044x2048-psdrpqwp.png" alt="serach" class="icon-search">
+
+            <div id="ctn-icon-search">
+                <i class="fa-solid fa-magnifying-glass" id="icon-search"></i>
+            </div>
+
             <a href="/" class="button--same">GRUPO 2</a>
             <a href="https://www.facebook.com/liceobilinguedelsurguatemala?locale=es_LA" target="_blank">
                 <input class="button--inscribirse" type="button" value="VER COLEGIO" > 
@@ -28,24 +32,47 @@
     <nav>
         <div class="line-nav">
             <ul>
-                <li><a href="/ATHORS/todos.html">AUTORES</a></li>
-                <li>/</li>
-                <li><a href="https://www.canva.com/design/DAFtu6AupZE/view?utm_content=DAFtu6AupZE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">TECNICAS DE INVESTIGACIÓN</a></li>
-                <li>/</li>
-                <li><a href="/assets/images/Instrucciones.png" target="_blank">INSTRUCIONES</a></li>
-                <li>/</li>
-                <li><a href="/assets/images/4toBach.jpeg">4TO BACH</a></li>
+                <li class="li-btn-nav"><a href="/ATHORS/todos.html" class="a-btn-nav">AUTORES</a></li>
+                <li class="li-btn-nav">/</li>
+                <li class="li-btn-nav"><a href="https://www.canva.com/design/DAFtu6AupZE/view?utm_content=DAFtu6AupZE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"  class="a-btn-nav">TECNICAS DE INVESTIGACIÓN</a></li>
+                <li class="li-btn-nav">/</li>
+                <li class="li-btn-nav"><a href="/assets/images/Instrucciones.png" target="_blank"   class="a-btn-nav">INSTRUCIONES</a></li>
+                <li class="li-btn-nav">/</li>
+                <li class="li-btn-nav"><a href="/assets/images/4toBach.jpeg" class="a-btn-nav">COMENTARIOS</a></li>
+                <li class="li-btn-nav">/</li>
+                <li class="li-btn-nav"><a href="/assets/images/4toBach.jpeg" class="a-btn-nav">JUEGO</a></li>
             </ul>
         </nav>
         </div>
 
 
+
+        <div id="ctn-bars-search">
+            <input type="text" id="inputSearch" placeholder="Busca todos nuestro temas relacionados a el estado de derecho" >
+        </div>
+
+        <ul id="box-search">
+            <li class="li"><a href="#" class="a"><i class="fa-solid fa-magnifying-glass"></i>No Se encontro nada oprime para ver lo que tenemos para ti</a></li>
+            <li class="li"><a href="/src/public/situacion.html" class="a"><i class="fa-solid fa-magnifying-glass"></i>Situación Actual</a></li>
+            <li class="li"><a href="/src/public/Indice.html" class="a"><i class="fa-solid fa-magnifying-glass"></i>INDICE</a></li>
+            <li class="li"><a href="/EXTRA/coments.html" class="a" target="_blank"><i class="fa-solid fa-magnifying-glass"></i>COMENTARIOS</a></li>
+            <li class="li"><a href="#" class="a"><i class="fa-solid fa-magnifying-glass"></i>CONCLUCIONES</a></li>
+            <li class="li"><a href="#" class="a"><i class="fa-solid fa-magnifying-glass"></i>VIDEOS</a></li>
+            <li class="li"><a href="#" class="a"><i class="fa-solid fa-magnifying-glass"></i>Video</a></li>
+            <li class="li"><a href="#" class="a"><i class="fa-solid fa-magnifying-glass"></i>Ir a Grupo2 ChatBot LBS</a></li>
+            <li class="li"><a href="#" class="a"><i class="fa-solid fa-magnifying-glass"></i>Entrevista</a></li>
+            <li class="li"><a href="#" class="a"><i class="fa-solid fa-magnifying-glass"></i>Entrevista</a></li>
+            <li class="li"><a href="#" class="a"><i class="fa-solid fa-magnifying-glass"></i>Entrevista</a></li>
+            <li class="li"><a href="https://www.facebook.com/liceobilinguedelsurguatemala?locale=es_LA" class="a"><i class="fa-solid fa-magnifying-glass"></i>Liceo Bilingue del Sur</a></li>
+        </ul>
+        <div class="banner"></div>
+
     <!-------------------- Banner -------------------->
 
     <main>
         <div class="video-home">
-            <video src="/assets/image/Himno Nacional de Guatemala _ Vuelotenango(720P_HD).mp4" class="video-fondo" autoplay muted loop></video>
-            <div class="protect"></div>
+            <video src="/assets/image/Bandera de Guatemala ondeando 4k(1080P_HD).mp4" class="video-fondo" autoplay muted loop></video>
+            <div id="protect"></div>
         </div>
         <section class="hero-homepage">
     </main>
@@ -60,20 +87,15 @@
             <a href="/src/public/Indice.html" target="_blank" class="go__store">Descubre lo que tenemos para ti > </a>
         </div>
         <div class="banner"></div>
-        <div class="container--button-audio--audio">
+        <!-- <div class="container--button-audio--audio">
             <audio src="/assets/image/PUES.mp" loop autoplay id="music-fondo"></audio>
             <img src="/assets/image/5f477fa71490460004d4eca5.png" alt="" id="audio-img">
         </div>
-    </section>
+    </section> -->
     <!-- https://cdn-icons-png.flaticon.com/512/483/483365.png
     https://cdn-icons-png.flaticon.com/512/109/109185.png -->
-    <script>
-        
-        function PlayAudio () {
-            document.getElementById('music-fondo').play();
 
-        }
-    </script>
-    <script src="./main.js"></script>
+    <script src="/src/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </body>
 </html>
