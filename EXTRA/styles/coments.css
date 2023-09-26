@@ -1,0 +1,136 @@
+:root{
+    --dark:rgb(30, 30, 30);
+    --font:rgb(231,231,231);
+    --shadow1:rgb(105,115,115);
+    --opacity:rgb(1,1,1,.0);
+    --black:rgb(0,0,0);
+    --strongGreen:rgb(4, 107, 0);
+    --softYellow:rgb(198, 232, 44);
+    --strongBlue:rgb(12, 12, 108);
+    --white-complete:#fff;
+    --gray-darker:#2a2a2a;
+    --gray-dark: #696969;
+    --gray:#999999;
+    --gray-light:#cccccc;
+    --gray-lighter:#ececec;
+    --gray-lightest:lighten(@gray-lighter,4%);
+    /* ------Variables de Medidas------ */
+    /* Cards size */
+    --cards-size-with: 700px;
+    --cards-size-heigth:400px;
+    /* info Size */
+    --info-size-with:260px;
+    --info-size-heigth:170px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    color: var(--white-complete);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+
+
+.video-home{
+    min-width: 100vh;
+}
+.video-fondo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    filter: blur(3px);
+}
+#protect{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    position: fixed;
+
+}
+
+/*
+---------
+    estilos forms
+---------
+*/
+
+
+#formCommet-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form-content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+label{
+    width: 700px;
+    height: 30px;
+    margin: 10px 0 10px 10px;
+    font-size: larger;
+    text-shadow: 5px 5px 3px black;
+}
+
+input{
+    width: 700px;
+    height: 30px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: large;
+    box-shadow: 10px 5px var(--black);
+    text-shadow: 1px 1px 2px black;
+}
+#coment{
+    height: 700px;
+    height: 160px;
+}
+
+#button{
+    background-color: var(--black);
+    width: 710px;
+    height: 50px;
+    margin-top: 30px;
+    font-size: larger;
+    color: var(--white-complete);
+    border: none;
+    box-shadow: none;
+}
+#button:hover{
+    animation-name: button;
+    animation-duration: 600ms;
+    cursor: pointer;
+}
+
+
+@keyframes button {
+    0%{
+        transform: scale(1.2);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
