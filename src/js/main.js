@@ -39,11 +39,11 @@ function ocultar_buscador () {
 };
 
 //Filtrado de Busqueda 
-// Obtener el elemento de entrada de búsqueda y agregar un evento "keyup"
+//-- Obtener el elemento de entrada de búsqueda y agregar un evento "keyup"--
 document.getElementById("inputSearch").addEventListener("keyup", buscador_interno);
 
 function buscador_interno() {
-    // Obtener el valor del input de búsqueda y convertirlo a mayúsculas
+    // --- Obtener el valor del input de búsqueda y convertirlo a mayúsculas ---
     var inputSearch = document.getElementById("inputSearch");
     var filter = inputSearch.value.toUpperCase();
 
