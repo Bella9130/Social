@@ -67,6 +67,7 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
+    position: fixed;
 }
 #menu-chatbot{
     width: 15%;
@@ -109,6 +110,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
+
 }
 
 

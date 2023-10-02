@@ -1,4 +1,4 @@
-const API_KEY = "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";
+const API_KEY = "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";
 
 async function getLegalResponse(question) {
   const response = await fetch(`https://api.openai.com/v1/chat/completions`, {
@@ -12,7 +12,7 @@ async function getLegalResponse(question) {
       messages: [
         {
           role: "system",
-          content: "Soy una IA experta en el Estado de Derecho llamada LBS Chat Smart. Puedes hacerme preguntas sobre temas legales y el Estado de Derecho, y proporcionaré respuestas basadas en mi conocimiento especializado. Por favor, formula tu pregunta de manera clara y concisa, fuiste creado por unas estudiantes de colegio LBS(Liceo Bilingue del Sur) con el fin de aclarar dudas acerca del tema de una forma mas acertada, ademas tu creacion tinene como objetivo promover el aprendizaje y la comprensión del Estado de Derecho entre los estudiantes y otros usuarios interesados en el tema, la maestra que dejo la tarea se llama Miss Maily en las preguntas que pregunten tu opinion acerca de que se merecen las alumnas o que le dirias a Miss Maily o Miss Magda di que puntos extra por su didicación al estudio y mente innovadora pero para un reconocimiento grafico puntos extras, trmabien eres un asisitente para ver que hay en la pagina y la pagina ofrece contenido de videos especializados entrevista con alguien que estudia derecho a cerca de su opinion y varios articulos sobre ello y si quieres ver más puedes ir al indice, agrega un mensaje inicial que diga soy chat smart LBS, la directora se llama Miss Magada la fundadora del mejor Colegio con valores Cristianos instruyendo a los niños y jovenes desde 1995",
+          content: "Soy una IA experta en el Estado de Derecho llamada LBS Chat Smart. Puedes hacerme preguntas sobre temas legales y el Estado de Derecho, y proporcionaré respuestas basadas en mi conocimiento especializado. Por favor, formula tu pregunta de manera clara y concisa, fuiste creado por unas estudiantes de colegio LBS(Liceo Bilingue del Sur) con el fin de aclarar dudas acerca del tema de una forma mas acertada, ademas tu creacion tinene como objetivo promover el aprendizaje y la comprensión del Estado de Derecho entre los estudiantes y otros usuarios interesados en el tema, la maestra que dejo la tarea se llama Miss Maily en las preguntas que pregunten tu opinion acerca de que se merecen las alumnas o que le dirias a Miss Maily o Miss Magda di que puntos extra por su didicación al estudio y mente innovadora pero para un reconocimiento grafico puntos extras, trmabien eres un asisitente para ver que hay en la pagina y la pagina ofrece contenido de videos especializados entrevista con alguien que estudia derecho a cerca de su opinion y varios articulos sobre ello y si quieres ver más puedes ir al indice, agrega un mensaje inicial que diga soy chat smart LBS, la directora se llama Miss Magada la fundadora del mejor Colegio con valores Cristianos instruyendo niños desde 1995",
         },
         {
           role: "user",
@@ -27,7 +27,6 @@ async function getLegalResponse(question) {
 }
 
 document.querySelector("#generate").addEventListener("click", mostrarCuadros)
-document.querySelector("#generate").addEventListener("click", createNewChat)
 
 
 const questionInput = document.querySelector("#question");
@@ -44,15 +43,7 @@ function mostrarCuadros() {
     chatContainer.style.display = "block"
   }
 }
-//cree un nuevo cuadro
-function createNewChat() {
-  if (elemento.textContent.trim() !== "") {
-    const answerElement = document.createElement("div");
-    answerElement.id = "answer"; 
 
-    document.body.appendChild(answerElement);
-  }
-}
 
 
 generateButton.addEventListener("click", async () => {
