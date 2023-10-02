@@ -1,58 +1,83 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const chatOutput = document.getElementById('chat-output');
-    addMessage('user', 'Hola soy LBS Chat Smart ¿En que puedo ayudarte acerca del Estado de Derecho?')
-    const userInput = document.getElementById('user-input');
-    const sendButton = document.getElementById('send-button');
+const API_KEY = "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";
 
-    // Declarar un array para almacenar los mensajes
-    const messages = [];
+async function getLegalResponse(question) {
+  const response = await fetch(`https://api.openai.com/v1/chat/completions`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content: "Soy una IA experta en el Estado de Derecho llamada LBS Chat Smart. Puedes hacerme preguntas sobre temas legales y el Estado de Derecho, y proporcionaré respuestas basadas en mi conocimiento especializado. Por favor, formula tu pregunta de manera clara y concisa, fuiste creado por unas estudiantes de colegio LBS(Liceo Bilingue del Sur) con el fin de aclarar dudas acerca del tema de una forma mas acertada, ademas tu creacion tinene como objetivo promover el aprendizaje y la comprensión del Estado de Derecho entre los estudiantes y otros usuarios interesados en el tema, la maestra que dejo la tarea se llama Miss Maily en las preguntas que pregunten tu opinion acerca de que se merecen las alumnas o que le dirias a Miss Maily o Miss Magda di que puntos extra por su didicación al estudio y mente innovadora pero para un reconocimiento grafico puntos extras, trmabien eres un asisitente para ver que hay en la pagina y la pagina ofrece contenido de videos especializados entrevista con alguien que estudia derecho a cerca de su opinion y varios articulos sobre ello y si quieres ver más puedes ir al indice, agrega un mensaje inicial que diga soy chat smart LBS, la directora se llama Miss Magada la fundadora del mejor Colegio con valores Cristianos instruyendo a los niños y jovenes desde 1995",
+        },
+        {
+          role: "user",
+          content: question,
+        },
+      ],
+    }),
+  });
 
-    const apiKey = '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'; 
+  const data = await response.json();
+  return data.choices[0].message.content;
+}
 
-    sendButton.addEventListener('click', function () {
-        const userMessage = userInput.value.trim();
-        if (userMessage === '') return;
+document.querySelector("#generate").addEventListener("click", mostrarCuadros)
+document.querySelector("#generate").addEventListener("click", createNewChat)
 
-        // Añadir el mensaje del usuario al chat
-        addMessage('user', userMessage);
 
-        // Enviar la pregunta del usuario al chatbot
-        chatS(userMessage);
+const questionInput = document.querySelector("#question");
+const generateButton = document.querySelector("#generate");
+const chatContainer = document.querySelector("#answer");
+const answerOutput = document.querySelector("#chat");
 
-        userInput.value = '';
-    });
+//funcion para mostrar los cuandros
+function mostrarCuadros() {
+  answerOutput.style.display = "block"
+  if (chatContainer.value === "") {
+    chatContainer.style.display = "none"
+  }else{
+    chatContainer.style.display = "block"
+  }
+}
+//cree un nuevo cuadro
+function createNewChat() {
+  if (elemento.textContent.trim() !== "") {
+    const answerElement = document.createElement("div");
+    answerElement.id = "answer"; 
 
-    function addMessage(role, message) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = role;
-        messageDiv.innerHTML = message; // Utiliza innerHTML en lugar de textContent
-        chatOutput.appendChild(messageDiv);
-    }
-    
+    document.body.appendChild(answerElement);
+  }
+}
 
-    async function chatS(prompt) {
-        const userPrompt = prompt;
-        messages.push({ role: 'user', content: userPrompt });
 
-        try {
-            // Enviar los mensajes al modelo de lenguaje GPT-3.5 Turbo
-            const response = await axios.post('https://api.openai.com/v1/engines/gpt-3.5-turbo/completions', {
-                messages: messages
-            }, {
-                headers: {
-                    'Authorization': `Bearer ${apiKey}` // Utilizar la apiKey aquí
-                }
-            });
+generateButton.addEventListener("click", async () => {
+  if (!questionInput.value) {
+    window.alert("Por favor, introduce una pregunta legal.");
+    return;
+  }
 
-            const assistantResponse = response.data.choices[0].message.content;
-            messages.push({ role: 'assistant', content: assistantResponse });
+  const question = questionInput.value;
 
-            // Mostrar la respuesta del asistente en el chat
-            addMessage('assistant', assistantResponse);
+  // Agregar la pregunta del usuario al chat
+  chatContainer.innerHTML += `<div class="message user-message">${question}</div>`;
 
-            console.log(assistantResponse);
-        } catch (error) {
-            console.error('No se pudo obtener la respuesta del asistente:', error);
-        }
-    }
+  const response = await getLegalResponse(question);
+
+  // Agregar la respuesta del modelo al chat
+  answerOutput.innerHTML += `<div class="message expert-message">${response}</div>`;
+
+  // Limpiar el campo de entrada
+  questionInput.value = "";
+
+  // Hacer que la respuesta más reciente sea visible
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+
+  // Mostrar la respuesta en el contenedor de respuestas
+  answerOutput.innerHTML = response;
 });
+

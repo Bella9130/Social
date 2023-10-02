@@ -110,23 +110,24 @@ body {
 }
 
 
-#chat-output{
-    width: 90%;
+#chat{
+    width: 60%;
     height: auto;
     background-color: var(--gray-dark);
     position: relative;
     padding: 30px;
     border-radius: 20px;
+    display: none;
 }
-.container-prompt{
-    width: 10%;
+#answer{
+    width: 40%;
     height: auto;
-    background-color: var(--gray-dark);
+    background-color: var(--gray-darker);
     position: relative;
     padding: 30px;
     border-radius: 20px;
     margin: 20px 0 20px 0;
-    left: 1000px;
+    left: 680px;
     display: none;
 }
 
@@ -153,7 +154,7 @@ body {
     background-color: var(--gray-dark-mid);
 
 }
-#user-input{
+#question{
     width: 70%;
     height: 50px;
     border-radius: 15px;
