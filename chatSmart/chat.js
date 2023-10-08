@@ -1,4 +1,4 @@
-const API_KEY = "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";
+const API_KEY = "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";
 
 async function getLegalResponse(question) {
   const response = await fetch(`https://api.openai.com/v1/chat/completions`, {
@@ -48,7 +48,7 @@ function mostrarCuadros() {
 
 generateButton.addEventListener("click", async () => {
   if (!questionInput.value) {
-    window.alert("Por favor, introduce una pregunta legal.");
+    window.alert("AQUI PUEDES INTRODUCIR TUS DUDAS A CERCA DEL ESTADO DE DEREHO");
     return;
   }
 
